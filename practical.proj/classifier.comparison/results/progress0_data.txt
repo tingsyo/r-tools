@@ -1,0 +1,42 @@
+Learning From Data Assignment
+
+0. Data
+
+1. Summary
+All:
+      x.1               x.2                x.3                 y      
+ Min.   :-2.3545   Min.   :-1.87847   Min.   :-2.35657   Min.   :0.0  
+ 1st Qu.:-0.2442   1st Qu.: 0.07557   1st Qu.:-0.74544   1st Qu.:0.0  
+ Median : 0.4793   Median : 0.92888   Median :-0.08351   Median :0.5  
+ Mean   : 0.4254   Mean   : 1.03128   Mean   :-0.09837   Mean   :0.5  
+ 3rd Qu.: 1.1579   3rd Qu.: 2.00912   3rd Qu.: 0.53275   3rd Qu.:1.0  
+ Max.   : 2.9291   Max.   : 4.13826   Max.   : 2.83659   Max.   :1.0  
+ var.   : 1.2141            1.8265             1.0065           
+ 
+y=0:
+      x.1               x.2               x.3                y    
+ Min.   :-1.5803   Min.   :-1.8785   Min.   :-2.3566   Min.   :0  
+ 1st Qu.: 0.1752   1st Qu.:-0.2401   1st Qu.:-0.8598   1st Qu.:0  
+ Median : 0.5709   Median : 0.2581   Median :-0.1853   Median :0  
+ Mean   : 0.6917   Mean   : 0.2951   Mean   :-0.1871   Mean   :0  
+ 3rd Qu.: 1.3196   3rd Qu.: 0.9486   3rd Qu.: 0.3895   3rd Qu.:0  
+ Max.   : 2.9291   Max.   : 2.3358   Max.   : 2.8204   Max.   :0  
+ var.   : 0.9322            0.8023            1.0951           
+
+y=1: 
+      x.1               x.2               x.3                  y    
+ Min.   :-2.3545   Min.   :-1.5610   Min.   :-2.232789   Min.   :1  
+ 1st Qu.:-0.6692   1st Qu.: 0.9053   1st Qu.:-0.627582   1st Qu.:1  
+ Median : 0.2162   Median : 1.6817   Median : 0.040047   Median :1  
+ Mean   : 0.1591   Mean   : 1.7675   Mean   :-0.009637   Mean   :1  
+ 3rd Qu.: 0.9917   3rd Qu.: 2.9157   3rd Qu.: 0.611593   3rd Qu.:1  
+ Max.   : 2.5391   Max.   : 4.1383   Max.   : 2.836590   Max.   :1  
+ var.   : 1.3651            1.7743            0.9122           
+
+
+2. Correlation matrix
+            x.1          x.2          x.3           y
+x.1  1.00000000 -0.151554773 -0.036274551 -0.24226166
+x.2 -0.15155477  1.000000000  0.006305994  0.54609279
+x.3 -0.03627455  0.006305994  1.000000000  0.08866635
+y   -0.24226166  0.546092795  0.088666352  1.00000000

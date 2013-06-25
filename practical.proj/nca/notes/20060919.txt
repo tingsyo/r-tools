@@ -1,0 +1,24 @@
+2006.09.19  13:00am CGN A105
+
+< Neighbourhood Component Analysis >
+1. Sam Roweis' idea
+  - Background
+    - simple classifiers perform very well
+    - kNN: a simple, non-parametric classifier.
+           What is the definition of "nearest"?
+    - leave-one-out(LOO) error is hard to optimize
+    -> use distance metric that optimizes the LOO error
+
+  - Math
+    - Stochastic neighbour selection: 
+    
+  
+2. ToDo: 
+  - implement NCA in R
+  - replicate Roweis' result (UCI-Wine data)
+  - think about other way to define the distance metric
+  
+  
+3. Note:
+  - to optimize customized objective function: optim in {stat} package 
+  - Ivanovs has worked with optim for a while, contact him if need some hints

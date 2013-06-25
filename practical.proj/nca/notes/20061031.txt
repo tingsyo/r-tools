@@ -1,0 +1,39 @@
+2006.10.31
+
+The computation of LOO for wine dataset took more than 6 hours, so I decide to stop it (because the administrator told me there will be a system upgrade last night).  Instead of LOO, I tried 10-fold cross validation on two smaller dataset: balance-scale and iris.
+
+[Dataset] 
+  - iris: 4 attributes, 3 classes(50/50/50), 150 data points. 
+  - balance-scale: 4 attributes, 3 classes(228/228/49), 625 data points.
+
+[results]
+COV: use (covariance matrix)^(-1/2) as initial guess
+PCV: use (pooled covariance matrix)^(-1/2) as initial guess
+RD2: reduce dimension to 2. (and hence we have a 4*2 matrix as the parameter)
+
+* numbers shown are average error for 10-fold CV, with lowest error in ().
+-------------------------------------------------
+                iris data       balance-scale 
+-------------------------------------------------
+1NN             0.0533(0.0)     0.1248(0.0794)
+NCA-COV         0.0933          0.2304
+NCV-COV-RD2     0.4333          0.2176
+NCA-PCV         0.0667(0.0)     0.2111(0.0968)
+NCA-PCV-RD2     0.2533          0.1664(0.0635)
+-------------------------------------------------
+
+[comments]
+1. In both dataset, NCA is not better than original kNN.
+
+2. Iris data is evenly split into three classes, and the error rates are low.  NCA is not better than kNN, but not too bad, either.  However, dimension reduction seems make things worse here.
+
+3. Balance-scale data is skewed in classes (288/288/49), and the error is much higher.  What is interesting is that NCA actually performs better with RD2.
+
+4. In Roweis' report, errors for these two dataset are: ~0.04 for bal, ~0.05 for iris, which is much lower than what I got.  According to the error rates in their report, NCA is better than my kNN results actually.  I do not know what are the tricks behind it.  However, they do only one (70%/30%) split rather than cross validation, so maybe they just pick a very good split?
+
+[todo]
+1. Generate a dataset that will theoretically works better with NCA.
+
+2. Compare also with LDA / PCA.
+
+3. Try to find a lowest error rate in 10-fold CV. (well, try this for LOO is nonsense, I think...) 

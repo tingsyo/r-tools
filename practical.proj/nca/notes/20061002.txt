@@ -1,0 +1,59 @@
+2006.10.02 11:00am
+ 
+[Test with Venables and Ripley's example: bwt data] ==> perfect
+================================================================================
+Call:  glm(formula = low ~ ., family = binomial, data = bwt)
+
+Coefficients:
+(Intercept)          age          lwt         race    smokeTRUE          ptl
+   -0.07897     -0.03585     -0.01239      0.45342      0.93728      0.54209
+     htTRUE       uiTRUE          ftv
+    1.83072      0.72196      0.06346
+
+Degrees of Freedom: 188 Total (i.e. Null);  180 Residual
+Null Deviance:      234.7
+Residual Deviance: 204.2        AIC: 222.2
+
+
+
+
+================================================================================
+> logitreg(X,bwt$low)
+
+Coefficients:
+(Intercept)         age         lwt        race   smokeTRUE         ptl
+-0.07914148 -0.03584191 -0.01238639  0.45344380  0.93730945  0.54208753
+     htTRUE      uiTRUE         ftv
+ 1.83072024  0.72197960  0.06345320
+
+Residual Deviance: 204.1928
+
+Convergence messgae: 0
+
+
+
+
+
+[Test with LFD'assignment data] ==> perfect
+================================================================================
+Call:  glm(formula = y ~ ., family = binomial, data = dat2) 
+
+Coefficients:
+(Intercept)          x.1          x.2          x.3  
+    -0.8735      -0.4670       1.0959       0.2074  
+
+Degrees of Freedom: 199 Total (i.e. Null);  196 Residual
+Null Deviance:      277.3 
+Residual Deviance: 199.3        AIC: 207.3 
+
+
+================================================================================
+> logitreg(as.matrix(dat2[,1:3]),dat2[,4])
+
+Coefficients:
+(Intercept)         x.1         x.2         x.3 
+ -0.8735688  -0.4669389   1.0959398   0.2073810 
+
+Residual Deviance: 199.3349 
+
+Convergence messgae: 0 

@@ -1,0 +1,19 @@
+2006.11.24
+
+[Dimension reduction]
+
+- Comparing NCA-rd2 with PCA+kNN
+
+---------------------------------------------------------------------------------
+                     bal        ion        iris       wine      norm2d      ring2  
+---------------------------------------------------------------------------------
+kNN           0.12322069  0.1737302  0.06000000 0.03888889        0.10     0.520
+PCA+kNN       0.20491550  0.1338095  0.05333333 0.04444444        0.15     0.520
+NCA-COV-RD2   0.22078853  0.1309524  0.54666667 0.51307190        0.48     0.020
+NCA-PCOV-RD2  0.17457757  0.1508730  0.13333333 0.34934641        0.43     0.025
+---------------------------------------------------------------------------------
+
+[note]
+1. PCA+kNN performs better for iris, wine, and norm2d datasets.
+2. NCA performs better for ring2, balance-scale, and ionosphere datasets
+3. For balance-scale and ionosphere datasets, the difference in performance is not significant.

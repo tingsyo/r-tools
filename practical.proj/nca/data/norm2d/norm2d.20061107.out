@@ -1,0 +1,20 @@
+[1] "norm2d.nord.COVM.cv10"
+Mean error for 10-fold CV:
+ 1NN  NCA 
+0.16 0.14 
+[1] ""
+[1] "norm2d.nord.PCOVM.cv10"
+Mean error for 10-fold CV:
+ 1NN  NCA 
+0.16 0.16 
+[1] ""
+[1] "norm2d.rd1.COVM.cv10"
+Mean error for 10-fold CV:
+ 1NN  NCA 
+0.16 0.14 
+[1] ""
+[1] "norm2d.rd1.PCOVM.cv10"
+Mean error for 10-fold CV:
+ 1NN  NCA 
+0.16 0.16 
+[1] ""

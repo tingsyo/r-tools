@@ -1,0 +1,7 @@
+2006.10.03 11:00am CGN A105
+
+Objectives:
+  - test results of optim-logistic regression
+  - clearify how to generate random data for classification:
+    perfect classified data can not converge for ML estimator
+  - Proceed to NCA

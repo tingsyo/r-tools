@@ -1,0 +1,17 @@
+2006.10.13  BBL 401
+
+1. Test of UCI-wine data:
+    exp(distance) goes to "Inf" -> can not compute
+    
+    -> normalize data with std.data()
+    
+
+2. Does not give converged results
+    -> initial guess with identity matrix -> no
+    -> initial guess with covariance matrix -> no
+
+3. Bug fixed:
+    -> "unclass(y)!=1" work only for binary class, not for UCI-wine
+    -> still does not converge after the fix
+    
+    

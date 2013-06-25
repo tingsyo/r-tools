@@ -1,0 +1,33 @@
+2006.10.04
+
+1. Finish function that standrize given data array
+
+# std.data.R
+# - T.S.Yo 2006.09.26
+# - Source a function, std.data(x), which returns a standardized
+#   data of given array x.
+#
+std.data <- function(x)
+{
+  # Check arguments
+  if (!missing(x)) {
+    if (!is.vector(x)) {
+      xx <- as.vector(x)
+    }
+    else xx <- x
+  }
+
+  # Get dimensions of given data
+  lx <- length(xx)
+  mx <- mean(x)
+  sdx <- sd(x)
+  xxx <- xx
+
+  # Standardized_value = (original_value - sample_mean) / sample_standard_deviation
+  for(i in 1:lx){
+      xxx[i] <- (x[i] - mx)/sdx
+  }
+
+  # Return
+  return(xxx)
+}

@@ -1,0 +1,35 @@
+2006.11.14 -(2)
+
+[Summary of self-generated dataset]
+1. norm2d:  has 2 attributes and 2 classes(0/1). Two classes of 2-d Guassian distributions. 
+(See "norm.ps")
+2. ring2 :  has 10 attributes and 2 classes(0/1). First 2 attributes describe concentric rings, other 8 are noises. 
+(See "ring2.ps")
+
+[Summary of NCA results]
+------------------------------------
+            norm2d        ring2  
+------------------------------------
+k             2.3         2.1        
+kNN           0.17        0.535 
+NCA-COV       0.16        0.320  
+
+k             4.8         2.0        
+kNN           0.16        0.530  
+NCA-PCOV      0.16        0.305  
+
+k            15.6         1.0       
+kNN           0.10        0.520 
+NCA-COV-RD2   0.48        0.020 
+
+k             3.8         1.0       
+kNN           0.12        0.520 
+NCA-PCOV-RD2  0.43        0.025 
+------------------------------------
+
+[Note]
+1. For both datasets, NCA outperforms traditional kNN.
+
+2. norm2d contains no noise, so dimension-reduction does not help.  In the contrary, ring2 is highly noised and dimension reduction largely increase the accuracy.
+
+3. Conbining with the results for 4 UCI datasets, we may suggest that NCA performs very well when the data is highly noised, or when data for different classes have different scale in different dimensions.  The later seems to be ables fixed by normalization of data, which is also done in traditional kNN.

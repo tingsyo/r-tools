@@ -1,0 +1,36 @@
+y ~ x.1 + x.2 + x.3
+
+-------------------------------------------------------------------------------
+10-fold CV
+
+     logreg        step-logreg          LDA             QDA             NNET
+ Min.   :0.1500   Min.   :0.1500   Min.   :0.150   Min.   :0.1500   Min.   :0.250
+ 1st Qu.:0.2000   1st Qu.:0.2000   1st Qu.:0.200   1st Qu.:0.2125   1st Qu.:0.250
+ Median :0.2500   Median :0.2750   Median :0.275   Median :0.2500   Median :0.300
+ Mean   :0.2500   Mean   :0.2650   Mean   :0.260   Mean   :0.2650   Mean   :0.305
+ 3rd Qu.:0.2875   3rd Qu.:0.3375   3rd Qu.:0.300   3rd Qu.:0.3000   3rd Qu.:0.350
+ Max.   :0.4000   Max.   :0.3500   Max.   :0.400   Max.   :0.4500   Max.   :0.400
+
+ 
+-------------------------------------------------------------------------------
+50-fold CV
+     LogReg         stepLR          LDA             QDA             NNET       
+ Min.   :0.00   Min.   :0.000   Min.   :0.000   Min.   :0.000   Min.   :0.000  
+ 1st Qu.:0.00   1st Qu.:0.000   1st Qu.:0.000   1st Qu.:0.000   1st Qu.:0.250  
+ Median :0.25   Median :0.250   Median :0.250   Median :0.250   Median :0.250  
+ Mean   :0.26   Mean   :0.265   Mean   :0.265   Mean   :0.255   Mean   :0.265  
+ 3rd Qu.:0.50   3rd Qu.:0.500   3rd Qu.:0.500   3rd Qu.:0.500   3rd Qu.:0.250  
+ Max.   :0.75   Max.   :0.750   Max.   :0.750   Max.   :0.750   Max.   :0.750 
+
+-------------------------------------------------------------------------------
+leave-one-out CV
+
+     LogReg          stepLR           LDA            QDA           NNET       
+ Min.   :0.00   Min.   :0.00   Min.   :0.00   Min.   :0.00   Min.   :0.000  
+ 1st Qu.:0.00   1st Qu.:0.00   1st Qu.:0.00   1st Qu.:0.00   1st Qu.:0.000  
+ Median :0.00   Median :0.00   Median :0.00   Median :0.00   Median :0.000  
+ Mean   :0.26   Mean   :0.27   Mean   :0.26   Mean   :0.26   Mean   :0.265  
+ 3rd Qu.:1.00   3rd Qu.:1.00   3rd Qu.:1.00   3rd Qu.:1.00   3rd Qu.:1.000  
+ Max.   :1.00   Max.   :1.00   Max.   :1.00   Max.   :1.00   Max.   :1.000  
+ 
+-------------------------------------------------------------------------------

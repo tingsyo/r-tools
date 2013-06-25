@@ -1,0 +1,54 @@
+2006.10.16  BBL 401
+
+[Test each function with hand made data]
+
+1. DistMtx(mtx1,mtx2)
+  - mtx1 and mtx2 are matrices contains nd1 and nd2 data points 
+    (with the same dimension) in rows, and this function will
+    return a nd1*nd2 matrix, with entry (i,j) represnets the 
+    Euclidean distance between i-th row in mtx1 and j-th row in 
+    mtx2. 
+(1) Test data: A=(1,2)^T, B= (2,3)^T
+    expected result: DistMtx(A,A) = [(0,1),(1,0)]  -> passed
+    expected result: DistMtx(A,B) = [(1,4),(0,1)]  -> passed
+
+(2) Test data: C={(1,0,0),(0,1,0),(0,0,1)}
+               D={(2,0,0),(0,2,0),(0,0,2)}
+    expected result: DistMtx(C,D) = {(1,5,5),(5,1,5),(5,5,1)}  -> passed
+    
+    
+2. fmin(A,X,y)  -> passed
+  - Test data:
+    A = 1
+    X=(1,2,3,4)^T
+    y=(0,0,1,1)^T
+    
+  - Hand calculation
+    AX = X = (1,2,3,4)^T
+    DistMtx(AX,AX) = {(0,1,4,9),(1,0,1,4),(4,1,0,1),(9,4,1,0)}
+    
+    Exp(-DistMtx(AX,AX)) = {(1.0000, 0.3679, 0.0183, 0.0001),
+                            (0.3679, 1.0000, 0.3679, 0.0183),
+                            (0.0183, 0.3679, 1.0000, 0.3679),
+                            (0.0001, 0.0183, 0.3679, 1.0000)}
+                            
+    p_ij = expdm(i,j)/sum(k<>i)expdm(i,k)
+    ......
+
+        
+3. gmin(A,X,y)
+  - Test data: same as 2.
+  
+  - Hand calculation:
+  
+
+
+[No-convergence problem]
+1. Since the results of the implemented function are consistent with the hand calculation, the problem should lie within the "optim".
+Using other optimizer other than "CG, conjugate gradient", e.g., "BFGS", yeilds a converged results.
+
+2. It is worth noted that different initial guess gives different results:
+  - identity matrix : converge to some diagnal matrix
+  - covariance matrix
+  - correlation matrix: symmetric matrix
+

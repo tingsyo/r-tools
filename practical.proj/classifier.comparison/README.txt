@@ -1,0 +1,1 @@
+This project is an assignment of the course, "Learning from Data", held in Utrecht University, 2006 Apr~Jul, by Prof. Ad Felders.

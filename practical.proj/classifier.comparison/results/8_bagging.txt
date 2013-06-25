@@ -1,0 +1,48 @@
+Results of Bagging
+
+Evaluate through 10-fold CV
+
+1. NNET
+NNET1 nnet: size=4, decay=0.01, entropy=T, formula=y~.
+NNET2 nnet: size=4, decay=0.01, entropy=T, formula=y~x.1+x.2^2
+        NNET1           NNET2
+    Mean    Sdev    Mean    Sdev
+10  0.28    0.0856  0.225*  0.0589
+50  0.275   0.0950  0.265   0.0818
+100 0.295   0.1165  0.255   0.0832
+200 0.295   0.1091  0.25    0.0913
+
+
+2. logistic regression,  formula=y~.
+        LR1             LR2
+    Mean    Sdev    Mean    Sdev
+10  0.255   0.0926  0.26    0.8433
+50  0.255   0.0832  0.26    0.0810
+100 0.255   0.0832  0.26    0.0810
+200 0.25    0.0816  0.25    0.0816
+
+
+3. LDA
+        LDA1             LDA2
+    Mean    Sdev    Mean    Sdev
+10  0.26    0.0937  0.25    0.0943
+50  0.27    0.0949  0.25    0.0943
+100 0.265   0.0944  0.25    0.0943
+200 0.26    0.0843  0.25    0.0943
+
+
+4. QDA
+        QDA1             QDA2
+    Mean    Sdev    Mean    Sdev
+10  0.255   0.0864  0.27    0.0823
+50  0.25    0.0850  0.27    0.0823
+100 0.25    0.0850  0.27    0.0823
+200 0.26    0.0907  0.27    0.0823
+
+
+----------------------------------------
+leave-one-out estimate:
+NNET2-10-model-ensemble
+
+mean error: 0.265
+stdev     : 0.4424

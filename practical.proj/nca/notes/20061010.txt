@@ -1,0 +1,24 @@
+2006.10.10
+
+1. Finish derivation of objective function and its 1st-order derivative
+  - the objective function Roweis proposed implicitly imply a kNN with k=1. (not mentioned in their paper)
+
+2. Implementation (in progress)
+
+# Functions for Neighbourhood Components Analysis classifier
+# T.S.Yo 2006.10.10
+#
+########################################################################                   
+# Suppliment functions
+########################################################################                   
+
+    # Compute the Eclidean distance^2 matrix for two set of vectors
+    # DistMtx(i,j) = Distance[(ith-row in mtx1),(jth-row in mtx2)]
+    #
+    DistMtx <- function(mtx1,mtx2)
+
+    # Objective function
+    fmin <- function(A,X,y,w=rep(1,nd))
+
+    # Gradient of Obj function
+    gmin <- function(A,X,y,w=rep(1,nd))

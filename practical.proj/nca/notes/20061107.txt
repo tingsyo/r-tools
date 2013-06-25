@@ -1,0 +1,57 @@
+2006.11.07
+
+[Results for BALANCE-SCALE data]
+
+
+---------------------------     ---------------------
+CV          1NN   NCA-COV             1NN  NCA-PCOV
+---------------------------     ---------------------
+[1,] 0.15873016 0.2222222      0.15873016 0.2380952
+[2,] 0.09523810 0.2698413      0.11111111 0.2539683
+[3,] 0.17460317 0.3015873      0.19047619 0.3174603
+[4,] 0.11111111 0.2063492      0.07936508 0.1428571
+[5,] 0.07936508 0.1746032      0.09523810 0.1904762
+[6,] 0.06451613 0.2258065      0.08064516 0.1612903
+[7,] 0.16129032 0.2903226      0.16129032 0.2580645
+[8,] 0.09677419 0.1612903      0.09677419 0.2419355
+[9,] 0.16129032 0.2419355      0.14516129 0.2096774
+[10,] 0.14516129 0.2096774      0.17741935 0.0967742
+---------------------------     ---------------------
+Ave:  0.1248080  0.2303635      0.1296211  0.2110599
+min:  0.06451613 0.1612903      0.07936508 0.0967742
+---------------------------     ---------------------
+
+---------------------------     ---------------------
+CV          1NN NCA-COV-RD2             1NN  NCA-PCOV-RD2
+---------------------------     ---------------------
+[1,] 0.15873016  0.26984127    0.15873016   0.25396825
+[2,] 0.12698413  0.26984127    0.09523810   0.14285714
+[3,] 0.19047619  0.26984127    0.22222222   0.23809524
+[4,] 0.07936508  0.20634921    0.11111111   0.12698413
+[5,] 0.09523810  0.06349206    0.07936508   0.07936508
+[6,] 0.08064516  0.17741935    0.08064516   0.12903226
+[7,] 0.17741935  0.30645161    0.16129032   0.19354839
+[8,] 0.09677419  0.11290323    0.09677419   0.12903226
+[9,] 0.17741935  0.24193548    0.17741935   0.14516129
+[10,] 0.16129032  0.25806452    0.17741935   0.22580645
+---------------------------     ---------------------
+Ave:  0.1344342   0.2176139     0.1360215    0.1663850
+min:  0.07936508  0.06349206    0.07936508   0.07936508
+---------------------------     ---------------------
+
+
+
+[Note]
+
+   1. Still can not make each split of 10-folds consistent.
+
+   2. 1NN still outperforms all NCA in average. However, the lowest error rate done by NCA-COV-RD2.
+
+
+[Summary]
+Comparing my results to Roweis':
+
+   1. I used 10-fold CV for averaged error, and Roweis used 40 different 70-30% training-testing splits. (well, I think this is not a very big problem, and I will look at the testing error only.)
+
+   2. For iris dataset, full-rank NCA (which means no dimension reduction) performs slightly better than Roweis' result (4% to 7%); but with rank-2 transformation (which means reduce the dimension to 2), my errors is significantly greater than Roweis' (25% to 5%). And I do not think this is just due to the way doing the splits.
+   3. For balance-scale dataset, 1-NN gives an averaged error about 13%, while all NCA transformations give around 20%. But Roweis reprted an error of ~4% in his paper, which is very much lower than my results. In my results, the rank-2 tranformation gives a slightly lower error (16%), but still higher than Roweis' 8% error.

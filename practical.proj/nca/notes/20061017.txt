@@ -1,0 +1,21 @@
+2006.10.17  CGN A105
+
+1. Convergence problem solved
+
+2. Connect the trained distant matric with kNN classifier
+
+3. Preprocessing: standarization of variables -> keep the mean and std deviation
+
+4. Try more initial guess to see the influence
+
+
+# ToDo:
+  - dimension reduction machism: one more variable, d
+  - create training/testing data: concentric rings
+    x1: [-1,1]
+    x2: [-1,1]
+    x3: [-1,1]
+    r = sqrt(x1^2+x2^2+x3^2)
+    y = {1,2,3} according to r, say, 0<r<0.3, 0.3<r<0.7, 0.7<r<1.0
+    
+    

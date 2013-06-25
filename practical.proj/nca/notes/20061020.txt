@@ -1,0 +1,76 @@
+2006.10.20 
+
+[Test of methods in optim]
+1. Test Data: (randomly generated)
+               x.1       x.2    y
+ [1,] -0.552464321 0.5431635    0
+ [2,]  0.569818221 0.2283683    0
+ [3,]  0.438564333 0.6581732    0
+ [4,] -0.004101553 0.6402853    0
+ [5,]  0.295873728 1.3209068    0
+ [6,]  0.386537059 2.0316051    1
+ [7,]  1.016729709 1.1519893    1
+ [8,]  1.784653433 0.8030684    1
+ [9,]  1.672694218 1.0584103    1
+[10,]  2.055757505 0.4980700    1
+
+
+2. Default
+    The default method is an implementation of that of Nelder and 
+    Mead (1965), that uses only function values and is robust but
+    relatively slow.  It will work reasonably well for
+    non-differentiable functions.
+-> Results:
+>Transformation Matrix:
+         x.1      x.2
+x.1 8.379793 4.127815
+x.2 5.887576 1.210554
+
+>Final function value: -10.01281 
+>Convergence messgae: 0 
+
+
+3. METHOD="CG"
+    a conjugate gradients method based on that by Fletcher and Reeves 
+    (1964) (but with the option of Polak-Ribiere or Beale-Sorenson 
+    updates).  Conjugate gradient methods will generally be more 
+    fragile than the BFGS method, but as they do not store a matrix 
+    they may be successful in much larger optimization problems.
+-> Results: Cannot converge
+
+
+4. METHOD="BFGS"
+    a quasi-Newton method (also known as a variable metric algorithm),
+    specifically that published simultaneously in 1970 by Broyden, 
+    Fletcher, Goldfarb and Shanno.  This uses function values and 
+    gradients to build up a picture of the surface to be optimized.
+-> Results:
+>Transformation Matrix:
+         x.1      x.2
+x.1 8.395922 0.000000
+x.2 0.000000 8.395922
+
+>Final function value: -8.986186 
+>Convergence messgae: 0
+
+
+5. METHOD="SANN"
+    By default a variant of simulated annealing given in Belisle 
+    (1992). Simulated-annealing belongs to the class of stochastic 
+    global optimization methods. It uses only function values but is 
+    relatively slow.
+-> Results:
+>Transformation Matrix:
+          x.1       x.2
+x.1 -3.736725  0.000000
+x.2  0.000000 -3.736725
+
+>Final function value: -8.361317 
+
+>Convergence messgae: 0 
+
+==================================================
+Note:
+1. Each method gives a different result, it is a little bit strange....
+2. SANN is very slow
+3. May need to know more about the optimization algorithms

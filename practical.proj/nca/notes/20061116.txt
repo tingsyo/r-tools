@@ -1,0 +1,41 @@
+2006.11.16
+
+[Summary of NCA]
+---------------------------------------------------------------------------------
+                     bal        ion        iris       wine      norm2d      ring2  
+---------------------------------------------------------------------------------
+k             2.6         2.6        1.0        1.0             2.3         2.1    
+kNN           0.12800819  0.1423016  0.05333333 0.04444444      0.17        0.535 
+NCA-COV       0.18225806  0.1907143  0.09333333 0.08398693      0.16        0.320  
+
+k            11.7         2.7        9.0        1.7             4.8         2.0        
+kNN           0.10232975  0.1537302  0.05333333 0.05555556      0.16        0.530  
+NCA-PCOV      0.08469022  0.1566667  0.02666667 0.02222222      0.16        0.305  
+
+k             1.0        11.4       25.1        2.5             15.6         1.0       
+kNN           0.12322069  0.1737302  0.06000000 0.03888889      0.10        0.520 
+NCA-COV-RD2   0.22078853  0.1309524  0.54666667 0.51307190      0.48        0.020 
+
+k             2.5        12.1        1.0        1.0             3.8         1.0       
+kNN           0.12480799  0.1765873  0.05333333 0.04444444      0.12        0.520 
+NCA-PCOV-RD2  0.17457757  0.1508730  0.13333333 0.34934641      0.43        0.025 
+---------------------------------------------------------------------------------
+
+[Summary LDA/QDA/1NN/NCA]
+---------------------------------------------------------------------------------
+           bal         ion        iris        wine      norm2d       ring2  
+---------------------------------------------------------------------------------
+LDA     0.1659      0.1425      0.0200      0.0222      0.1300      0.4700
+QDA     0.0832      ------      0.0267      0.0056      0.0800      0.1350
+1NN     0.1327      0.1338      0.0533      0.0444      0.1600      0.5300
+NCA     0.0847      0.1567      0.0267      0.0222      0.1600      0.3050
+---------------------------------------------------------------------------------
+
+[Note]
+1. Comparing NCA with traditional kNN (Euclidean distance), if same k is used, NCA shows that the leanred distance metrics do privide better classification.
+
+2. However, if we consider other classifiers, e.g., LDA and QDA, then NCA may not be the best cost/performance choice, especially when comparing to QDA.
+
+3. QDA can not work with ionosphere data due to the "rank deficiency' error.  In R-help archive, the only entry for this error is :
+"to use QDA you need as any observations in each group as dimensions, and futhermore those observations need to like ones from a non-degenerate normal distribution."
+And this is known to happen with certain bootstrapping/cross-validation slicing.  Several retries are made with different random seeds, but still can not work.

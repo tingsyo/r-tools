@@ -1,0 +1,79 @@
+2006.09.26 11:00am CGN A105
+
+Objectives:
+  - to understand the details about the R function : optim
+  - simple example: logistic regression
+  - test with UCI-wine dataset
+
+[function optim in R]
+Manual: http://sekhon.berkeley.edu/stats/html/optim.html
+
+------------------------------------------------------------------
+
+
+2006.09.29
+
+[Fake dataset]
+    dummy.data(x,y), b_0=1, b_1=1
+        x: seq(-5,5,by=0.1)
+        y: 1/(1+exp(-1-1*x))
+        class: ifelse(y>0.5,1,0)
+                
+
+[Test with glm]
+------------------------------------------------------------------
+Call:  glm(formula = dummy.data$y ~ dummy.data$x, family = binomial)
+
+Coefficients:
+ (Intercept)  dummy.data$x
+           1             1
+
+Degrees of Freedom: 100 Total (i.e. Null);  99 Residual
+Null Deviance:      72.82
+Residual Deviance: -1.736e-15   AIC: 36.52
+Warning message:
+non-integer #successes in a binomial glm! in: eval(expr, envir, enclos)
+------------------------------------------------------------------
+Call:  glm(formula = dummy.data$class ~ dummy.data$x, family = binomial)
+
+Coefficients:
+ (Intercept)  dummy.data$x
+       314.7         331.3
+
+Degrees of Freedom: 100 Total (i.e. Null);  99 Residual
+Null Deviance:      136.4
+Residual Deviance: 2.564e-07    AIC: 4
+Warning messages:
+1: algorithm did not converge in: glm.fit(x = X, y = Y, weights = weights, start = start, etastart = etastart,
+2: fitted probabilities numerically 0 or 1 occurred in: glm.fit(x = X, y = Y, weights = weights, start = start, etastart = etastart,
+------------------------------------------------------------------
+
+
+
+
+[Test with optim]
+------------------------------------------------------------------
+> logitreg(dummy.data$x,dummy.data$y)
+
+Coefficients:
+ (Intercept)         Var1
+1.010000e+02 1.065814e-14
+
+Residual Deviance: 0
+
+Convergence messgae: 0
+------------------------------------------------------------------
+> logitreg(dummy.data$x,dummy.data$class)
+
+Coefficients:
+(Intercept)        Var1
+   45.21670    47.53201
+
+Residual Deviance: 0.3590339
+
+Convergence messgae: 1
+------------------------------------------------------------------
+
+
+
+==> Results are not comparable!?

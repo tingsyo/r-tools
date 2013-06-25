@@ -1,0 +1,38 @@
+Learning From Data Assignment
+----------------------------------------
+- Data
+
+
+- Plan
+  - Classification methods:
+    - logistic regression
+    - LDA / QDA
+    - neural network
+    - kNN
+    - SVM
+  - Model selection
+    - AIC (BIC)
+    - cross validation
+  - Adpative training
+    - boosting
+    - ada-boosting
+-----------------------------------------
+
+1. First analysis of the given dataset
+  - X={x.1,x.2,x.3|R}, Y={y|0,1}
+  - Correlation coefficient
+  - Stepwise logistic regression
+  -> Select proper models
+
+2. Test of all classifier  
+  - logistic regression
+  - LDA/QDA
+  - n-net
+  - kNN
+  - naive Bayes
+  - SVM
+  -> Select proper classifiers
+
+3. Bootstrap aggregation (bagging)
+
+  -> final classifier

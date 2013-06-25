@@ -1,0 +1,25 @@
+2006.10.23 
+
+[Combine NCA with kNN]
+
+1. k = 1 for kNN, because this is what we assumed when deriving the objective function for NCA.
+
+2. package <b>class</b> is needed:
+<pre>  $ library(class)</pre>
+
+3. The code is very easy, just do transform before perform kNN:
+<pre>
+ncaknn <- function(train, test, cl, k = 1, ...)
+{
+    tm <- nca(train,cl)$par     # Transformation matrix trained through NCA
+    TrTrain <- train %*% tm     # Transform the training data
+    TrTest  <- test  %*% tm     # Transform the testing data
+    knn(TrTrain, TrTest, cl, k,...)
+}
+</pre>
+===> Test OK.
+
+4. ToDo:
+  - Test with some data set.
+  - Add dimension reduction support.
+  - Add option for initial guess: identity matrix, covariance matrix, or pooled covariance matrix.

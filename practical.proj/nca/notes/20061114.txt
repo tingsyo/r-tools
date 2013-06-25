@@ -1,0 +1,36 @@
+2006.11.14
+
+[Summary of UCI dataset]
+1. bal:  balance-scale data, has 4 attributes and 3 classes(L/R/B).
+2. ion:  ionosphere, has 34 attributes and 2 classes(good/bad).
+3. iris: has 4 attributes and 3 classes.
+4. wine: has 13 attributes and 3 classes(L/R/B).
+
+[Summary of NCA results]
+-----------------------------------------------------------
+                     bal        ion        iris       wine
+-----------------------------------------------------------
+k             2.6         2.6        1.0        1.0       
+kNN           0.12800819  0.1423016  0.05333333 0.04444444
+NCA-COV       0.18225806  0.1907143  0.09333333 0.08398693
+
+k            11.7         2.7        9.0        1.7
+kNN           0.10232975  0.1537302  0.05333333 0.05555556
+NCA-PCOV      0.08469022  0.1566667  0.02666667 0.02222222
+
+k             1.0        11.4       25.1        2.5 
+kNN           0.12322069  0.1737302  0.06000000 0.03888889
+NCA-COV-RD2   0.22078853  0.1309524  0.54666667 0.51307190
+
+k             2.5        12.1        1.0        1.0
+kNN           0.12480799  0.1765873  0.05333333 0.04444444
+NCA-PCOV-RD2  0.17457757  0.1508730  0.13333333 0.34934641
+-----------------------------------------------------------
+
+[Note]
+1. All results presented are averaged through 10-fold cross validation.
+
+2. For bal, iris, and wine, NCA outperforms traditional kNN.  And for ion dataset, the difference between NCA and traditional kNN is small.
+
+3. For ion dataset, NCA with reduced-dimension (2) outperforms the traditional kNN, while other datasets show no advantage in dimension reduction.
+

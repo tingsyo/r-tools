@@ -1,0 +1,7 @@
+plot(1-t(uci.out[,4:6])[2,],ylim=c(0.4,1),type="b",xaxt="n",xlab="",ylab="Accuracy")
+axis(1,1:6,rownames(uci.out))
+lines(1-t(uci.out[,4:6])[3,],type="b",lty=2,pch=3)
+#title("Averaged Accuracy for 10-fold Cross Validation")
+legend(1.0,0.55,c("KNN on original space","NCAKNN"),lty=c(1,2),pch=c(1,3),cex=1.0,bty="n")
+rect(1,0.47,3.6,0.55)
+text(seq(1,6),0.4,labels=as.integer(uci.out[,4]))
